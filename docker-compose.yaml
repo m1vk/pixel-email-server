@@ -15,9 +15,9 @@ services:
       - postgres:/var/lib/postgresql/data
       - ./docker/pg-init-scripts:/docker-entrypoint-initdb.d
 
-  nats-server:
+  nats-server-img:
     image: nats:latest
-    container_name: nats-server
+    container_name: nats-server-img
     ports:
       - "4222:4222"
       - "8222:8222"
