@@ -3,6 +3,7 @@ import { AccountsModule } from './accounts.module';
 import { Transport, MicroserviceOptions } from '@nestjs/microservices';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 import { ValidationPipe } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(AccountsModule, new FastifyAdapter());
@@ -17,9 +18,10 @@ async function bootstrap() {
     },
   });
 
-  await app.startAllMicroservices();
+  console.log("Port: ", process.env.DATABASE_USER);
 
-  await app.listen(process.env.PORT ?? 3000, '0.0.0.0');
+  await app.startAllMicroservices();
+  await app.listen(4001);
   console.log(`User service is running on: ${await app.getUrl()}`);
 }
 
