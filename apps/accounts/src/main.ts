@@ -21,7 +21,7 @@ async function bootstrap() {
   console.log("Port: ", process.env.DATABASE_USER);
 
   await app.startAllMicroservices();
-  await app.listen(4001);
+  await app.listen(4001, '0.0.0.0');
   console.log(`User service is running on: ${await app.getUrl()}`);
 }
 
