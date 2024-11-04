@@ -10,6 +10,7 @@ import { PubSub } from 'graphql-subscriptions';
 import { ObjMap } from 'graphql/jsutils/ObjMap';
 import { MercuriusContext, defaultErrorFormatter } from 'mercurius';
 import { AuthService } from '../modules/auth/services/auth.service';
+import { ClientProxy } from '@nestjs/microservices';
 
 export interface IWsParams {
   readonly Authorization?: string;
@@ -20,6 +21,7 @@ export class GraphqlConfig implements GqlOptionsFactory<MercuriusDriverConfig> {
   logger = new Logger(GraphqlConfig.name);
   
   constructor(
+    @Inject('AUTH_SERVICE') private readonly rpc: ClientProxy,
     readonly authService: AuthService,
     readonly als: AsyncLocalStorage<RequestContext>,
   ) {}

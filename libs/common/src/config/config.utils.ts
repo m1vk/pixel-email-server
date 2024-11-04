@@ -9,7 +9,7 @@ export class ConfigsUtils {
     TRACER_ENABLE: Joi.boolean().default(false),
     TRACER_URL: Joi.string().default(''),
     TRACER_SECRET_KEY: Joi.string().default(''),
-    NATS_SERVER_URL: Joi.string().required(),
+    NATS_SERVER_URL: Joi.string().default(''),
     // REDIS_HOST: Joi.string().required(),
     // REDIS_PORT: Joi.number().required(),
     // REDIS_PASSWORD: Joi.string().default(''),

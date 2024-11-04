@@ -8,12 +8,12 @@ import { SchemaType } from './config.type';
 export class ConfigService extends ConfigsUtils {
   protected schema = {
     ...this.baseSchemaFields,
-    PORT: Joi.number().required(),
-    JWT_SECRET: Joi.string().required(),
-    JWT_EXPIRE: Joi.number().required(),
-    NATS_SERVER_URL: Joi.string().required(),
-    REDIS_HOST: Joi.string().required(),
-    REDIS_PORT: Joi.number().required(),
+    PORT: Joi.number().default(''),
+    JWT_SECRET: Joi.string().default(''),
+    JWT_EXPIRE: Joi.number().default(''),
+    NATS_SERVER_URL: Joi.string().default(''),
+    REDIS_HOST: Joi.string().default(''),
+    REDIS_PORT: Joi.number().default(''),
     REDIS_PASSWORD: Joi.string().default(''),
     CACHE_RESPONSE_TTL: Joi.number().default(90),
   };
@@ -22,7 +22,7 @@ export class ConfigService extends ConfigsUtils {
 
   constructor() {
     super();
-    this.confs = ConfigsUtils.validateAndExtractEnv(this.schema);
+    // this.confs = ConfigsUtils.validateAndExtractEnv(this.schema);
   }
 
   get cacheResponseTTL() {

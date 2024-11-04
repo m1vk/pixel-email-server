@@ -11,9 +11,9 @@ export class AuthService {
   private readonly logger = new Logger(AuthService.name);
 
   constructor(
-    @Inject('AUTH_SERVICE') private readonly rpc: ClientProxy,
-    private jwtService: JwtService,
-    private readonly als: AsyncLocalStorage<RequestContext>
+    @Inject('AUTH_SERVICE') private readonly authService: AuthService,
+    private readonly jwtService: JwtService,
+    private readonly asyncLocalStorage: AsyncLocalStorage<RequestContext>,
   ) {}
 
   async register(data: RegisterPayload): Promise<boolean> {

@@ -1,3 +1,5 @@
+scalar JSON
+
 type Mutation {
   Auth: AuthMutation
 }
