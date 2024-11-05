@@ -1,9 +1,9 @@
-// auth.module.ts
 import { Module } from '@nestjs/common';
 import { ClientProxyFactory, Transport } from '@nestjs/microservices';
 import { AuthService } from './services/auth.service';
 import { JwtService } from '@nestjs/jwt';
 import { AsyncLocalStorage } from 'async_hooks';
+import { AuthMutationResolver } from './resolvers/auth.mutation.resolver';
 
 @Module({
   providers: [
@@ -22,6 +22,7 @@ import { AsyncLocalStorage } from 'async_hooks';
     AuthService,
     JwtService,
     AsyncLocalStorage,
+    AuthMutationResolver
   ],
   exports: ['AUTH_SERVICE', AuthService],
 })
