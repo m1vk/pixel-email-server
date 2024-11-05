@@ -3,6 +3,8 @@ import { GatewayController } from './gateway.controller';
 import { GatewayService } from './gateway.service';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { ConfigModule } from '@nestjs/config';
+import { GraphqlModule } from './graphql/graphql.module';
+import { AsyncLocalStorage } from 'async_hooks';
 
 @Module({
   imports: [
@@ -15,7 +17,9 @@ import { ConfigModule } from '@nestjs/config';
         },
       },
     ]),
-    ConfigModule.forRoot()
+    ConfigModule.forRoot(),
+    GraphqlModule,
+    AsyncLocalStorage
   ],
   controllers: [GatewayController],
   providers: [GatewayService],

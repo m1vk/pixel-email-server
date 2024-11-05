@@ -1,6 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 import { AccountsService } from './accounts.service';
-import { MessagePattern } from '@nestjs/microservices';  // Import the necessary decorator
+import { MessagePattern } from '@nestjs/microservices';  
 
 
 @Controller()
