@@ -11,13 +11,14 @@ export class AuthMutationResolver {
   constructor(
     private authService: AuthService) {}
 
-  @Mutation('Auth')
-  async mutation() {
+  @Mutation(() => AuthMutation)
+  async Auth() {
     return {};
   }
 
   @ResolveField('register')
   async register(@Args('data') data: RegisterDto): Promise<boolean> {
+    console.log("Запрос на регистрацию")
     return true;
   }
 

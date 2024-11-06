@@ -1,11 +1,11 @@
 scalar JSON
 
-type Query {
-  _empty: String
-}
-
 type Mutation {
   Auth: AuthMutation
+}
+
+type Query {
+  _empty: String
 }
 
 input RegisterDto {
