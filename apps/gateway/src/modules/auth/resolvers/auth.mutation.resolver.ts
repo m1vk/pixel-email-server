@@ -9,7 +9,8 @@ export class AuthMutationResolver {
   private readonly logger = new Logger(AuthMutationResolver.name);
 
   constructor(
-    private authService: AuthService) {}
+    private authService: AuthService
+  ) {}
 
   @Mutation(() => AuthMutation)
   async Auth() {
@@ -18,12 +19,11 @@ export class AuthMutationResolver {
 
   @ResolveField('register')
   async register(@Args('data') data: RegisterDto): Promise<boolean> {
-    console.log("Запрос на регистрацию")
-    return true;
+    return this.authService.register(data);
   }
 
   @ResolveField('login')
   async login(@Args('data') data: LoginDto): Promise<TokenResponse> {
-    return { accessToken: "123" };
+    return this.authService.login(data);
   }
 }
