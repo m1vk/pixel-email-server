@@ -9,12 +9,13 @@ type Query {
 }
 
 input RegisterDto {
-  nikName: String!
+  username: String!
+  email: String!
   password: String!
 }
 
 input LoginDto {
-  nikName: String!
+  username: String!
   password: String!
 }
 
