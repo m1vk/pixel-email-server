@@ -15,14 +15,7 @@
     "----   gateway  ----": "",
     "start:debug:gateway": "npx dotenv -e ./apps/gateway/.env -- nest start gateway --debug --watch",
     "build:gateway": "nest build gateway",
-    "gql:definitions:gateway": "ts-node ./apps/gateway/src/graphql/graphql.definitions.ts",
-    "----   accounts  ----": "",
-    "start:debug:accounts": "npx dotenv -e ./apps/accounts/.env -- nest start accounts --debug --watch",
-    "prisma:generate:accounts": "npx dotenv -e ./apps/accounts/.env -- npx prisma generate --schema ./apps/accounts/src/utils/prisma/account.prisma",
-    "migrate:dev:create:accounts": "npx dotenv -e ./apps/accounts/.env -- npx prisma migrate dev --create-only --schema ./apps/accounts/src/utils/prisma/account.prisma",
-    "migrate:deploy:accounts": "npx dotenv -e ./apps/accounts/.env -- npx prisma migrate deploy --preview-feature --schema ./apps/accounts/src/utils/prisma/account.prisma",
-    "migrate:reset:accounts": "npx dotenv -e ./apps/accounts/.env -- npx prisma migrate reset --preview-feature --schema ./apps/accounts/src/utils/prisma/account.prisma",
-    "build:accounts": "nest build accounts"
+    "gql:definitions:gateway": "ts-node ./apps/gateway/src/graphql/graphql.definitions.ts"
   },
   "dependencies": {
     "@apollo/client": "^3.11.8",

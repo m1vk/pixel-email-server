@@ -12,13 +12,40 @@
         "tsConfigPath": "apps/gateway/tsconfig.app.json"
       }
     },
-    "accounts": {
+    "email_processor": {
       "type": "application",
-      "root": "apps/accounts",
+      "root": "apps/email_processor",
       "entryFile": "main",
-      "sourceRoot": "apps/accounts/src",
+      "sourceRoot": "apps/email_processor/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/accounts/tsconfig.app.json"
+        "tsConfigPath": "apps/email_processor/tsconfig.app.json"
+      }
+    },
+    "notification_service": {
+      "type": "application",
+      "root": "apps/notification_service",
+      "entryFile": "main",
+      "sourceRoot": "apps/notification_service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/notification_service/tsconfig.app.json"
+      }
+    },
+    "users": {
+      "type": "application",
+      "root": "apps/users",
+      "entryFile": "main",
+      "sourceRoot": "apps/users/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/users/tsconfig.app.json"
+      }
+    },
+    "admin_api": {
+      "type": "application",
+      "root": "apps/admin_api",
+      "entryFile": "main",
+      "sourceRoot": "apps/admin_api/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/admin_api/tsconfig.app.json"
       }
     }
   }
