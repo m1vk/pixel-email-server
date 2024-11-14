@@ -4,7 +4,7 @@ type Mutation {
   Auth: AuthMutation
 }
 
-type Query {
+type Auth {
   _empty: String
 }
 
