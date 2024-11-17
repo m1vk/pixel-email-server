@@ -3,40 +3,22 @@
   "sourceRoot": "apps",
   "monorepo": true,
   "projects": {
-    "gateway": {
+    "apps/email-gateway": {
       "type": "application",
-      "root": "apps/gateway",
+      "root": "apps/apps/email-gateway",
       "entryFile": "main",
-      "sourceRoot": "apps/gateway/src",
+      "sourceRoot": "apps/apps/email-gateway/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/gateway/tsconfig.app.json"
+        "tsConfigPath": "apps/apps/email-gateway/tsconfig.app.json"
       }
     },
-    "email_processor": {
+    "email-gateway": {
       "type": "application",
-      "root": "apps/email_processor",
+      "root": "apps/email-gateway",
       "entryFile": "main",
-      "sourceRoot": "apps/email_processor/src",
+      "sourceRoot": "apps/email-gateway/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/email_processor/tsconfig.app.json"
-      }
-    },
-    "notification_service": {
-      "type": "application",
-      "root": "apps/notification_service",
-      "entryFile": "main",
-      "sourceRoot": "apps/notification_service/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/notification_service/tsconfig.app.json"
-      }
-    },
-    "users": {
-      "type": "application",
-      "root": "apps/users",
-      "entryFile": "main",
-      "sourceRoot": "apps/users/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/users/tsconfig.app.json"
+        "tsConfigPath": "apps/email-gateway/tsconfig.app.json"
       }
     }
   }
