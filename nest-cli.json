@@ -38,15 +38,6 @@
       "compilerOptions": {
         "tsConfigPath": "apps/users/tsconfig.app.json"
       }
-    },
-    "admin_api": {
-      "type": "application",
-      "root": "apps/admin_api",
-      "entryFile": "main",
-      "sourceRoot": "apps/admin_api/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/admin_api/tsconfig.app.json"
-      }
     }
   }
 }
